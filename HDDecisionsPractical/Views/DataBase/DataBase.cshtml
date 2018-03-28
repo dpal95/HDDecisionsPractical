@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HDDecisionsPractical.Models.ApplicantModel>
+
+@{
+    ViewBag.Title = "DataBase";
+}
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+        <th></th>
+        <th>Salary</th>
+        <th>Credit Card</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+            @Html.Encode(item.FirstName)
+            </td>
+            <td>
+                @Html.Encode(item.LastName)
+            </td>
+            <td>
+                @Html.Encode(item.DOB)
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+                @Html.Encode(item.Salary)
+
+            </td>
+            
+            <td>
+
+                @Html.Encode(item.CardSuggested)
+            </td>
+        </tr>
+
+    }
+</table>

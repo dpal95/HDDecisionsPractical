@@ -1,0 +1,64 @@
+﻿@model HDDecisionsPractical.Models.ApplicantModel
+@{
+    ViewBag.Title = "Apply";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+@using (Html.BeginForm("ApplyMethod", "Apply", FormMethod.Post))
+{
+<div id="master" class="jumbotron">
+
+<div class="jumbotronEditLeft jumbotron">
+
+    <div>
+        <label>First Name:</label>
+    </div>
+    <div>
+        <label>Second Name:</label>
+    </div>
+    <div>
+        <label>DOB:</label>
+    </div>
+    <div>
+        <label>Salary:</label>
+    </div>
+
+    <div>
+        <input type="submit" id="applyButton"/>
+    </div>
+</div>
+
+    <div class="  jumbotron">
+        <div>
+            
+            @Html.TextBoxFor(m => m.FirstName, new { @data_val = "true", @data_val_required = "First Name is required" })
+        </div>
+        <div>
+           
+            @Html.TextBoxFor(m => m.LastName, new { @data_val = "true", @data_val_required = "Last Name is required" })
+        </div>
+        <div>
+            
+            @Html.TextBoxFor(m => m.DOB, new { @type = "date", @data_val = "true", @data_val_required = "Date of Birth is required" })
+        </div>
+
+        <div>
+            
+            @Html.TextBoxFor(m => m.Salary, new {@type = "number", @data_val = "true", @data_val_required = "Salary is required" })
+        </div>
+        <div>
+            @Html.ValidationSummary()
+        </div>
+    </div>
+
+
+
+ 
+    
+</div>
+}
